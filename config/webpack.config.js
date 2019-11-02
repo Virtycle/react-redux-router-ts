@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const isWsl = require('is-wsl');
@@ -310,6 +310,10 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        '@src': path.resolve(__dirname, '../src'),
+        '@pages': path.resolve(__dirname, '../src/pages'),
+        '@store': path.resolve(__dirname, '../src/store'),
+        '@components': path.resolve(__dirname, '../src/components'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
